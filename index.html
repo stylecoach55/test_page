@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>등대독서회 | (주)제주비 사내 동호회</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 33, 71, 0.85), rgba(0, 33, 71, 0.7)), url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .success-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full transition-all duration-300 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center gap-2 text-[#002147]" id="nav-logo">
+                <i class="fas fa-lighthouse text-[#FFD700]"></i>
+                <span class="text-white transition-colors duration-300" id="logo-text">등대독서회</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium" id="nav-links">
+                <a href="#about" class="text-white hover:text-[#FFD700] transition-colors">소개</a>
+                <a href="#program" class="text-white hover:text-[#FFD700] transition-colors">활동 안내</a>
+                <a href="#benefits" class="text-white hover:text-[#FFD700] transition-colors">회원 혜택</a>
+                <a href="#apply" class="bg-[#FFD700] text-[#002147] px-5 py-2 rounded-full hover:bg-white transition-all transform hover:scale-105">가입 신청</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <span class="inline-block bg-[#FFD700] text-[#002147] px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-wider uppercase animate-bounce">JejuBee's Learning Community</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                금요일 점심,<br><span class="text-[#FFD700]">당신의 세상</span>을 넓히는 2시간
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                거친 업무의 바다 속에서 잠시 멈춰, 책이라는 등대 불빛 아래 동료들과 지혜를 나누는 (주)제주비의 공식 독서 동호회입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#apply" class="bg-[#FFD700] text-[#002147] px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    지금 바로 가입하기
+                </a>
+                <a href="#about" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                    더 알아보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Meeting" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-[#FFD700] rounded-2xl z-0"></div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#002147] mb-6">왜 '등대'인가요?</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        등대는 어둠 속에서도 길을 잃지 않도록 밝은 빛을 비춥니다. 우리 <strong>등대독서회</strong>는 바쁜 업무 루틴 속에서 스스로를 돌볼 기회를 제공하고, 동료들과의 연결을 통해 더 넓은 시야를 갖도록 돕습니다.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 text-xl"></i>
+                            <div>
+                                <span class="font-bold text-[#002147]">사고의 확장:</span>
+                                <p class="text-gray-600">다양한 장르의 도서를 통해 유연한 사고방식을 함양합니다.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-[#FFD700] mt-1 text-xl"></i>
+                            <div>
+                                <span class="font-bold text-[#002147]">정서적 환기:</span>
+                                <p class="text-gray-600">한 주의 마무리인 금요일, 책과 함께 따뜻한 휴식을 취합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="py-24 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#002147] mb-4">우리의 금요일 일정</h2>
+            <div class="w-20 h-1 bg-[#FFD700] mx-auto mb-6"></div>
+            <p class="text-gray-600">매주 금요일 오전 11시부터 13시까지, 알차게 구성된 120분</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-[#002147] hover:transform hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-[#002147]/5 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-book-reader text-3xl text-[#002147]"></i>
+                </div>
+                <span class="text-sm font-bold text-gray-400">SESSION 01</span>
+                <h3 class="text-xl font-bold text-[#002147] mt-2 mb-4">11:00 - 11:30 | 몰입</h3>
+                <p class="text-gray-600 italic mb-4">"Deep Reading Time"</p>
+                <p class="text-gray-500">방해받지 않는 조용한 라운지에서 오롯이 선정 도서에만 집중하는 시간입니다.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-[#FFD700] hover:transform hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-utensils text-3xl text-[#FFD700]"></i>
+                </div>
+                <span class="text-sm font-bold text-gray-400">SESSION 02</span>
+                <h3 class="text-xl font-bold text-[#002147] mt-2 mb-4">11:30 - 12:30 | 소통</h3>
+                <p class="text-gray-600 italic mb-4">"Lunch & Dialogue"</p>
+                <p class="text-gray-500">제공되는 프리미엄 도시락과 함께 책의 주요 키워드에 대해 자유롭게 토론합니다.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-[#002147] hover:transform hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-[#002147]/5 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-pen-nib text-3xl text-[#002147]"></i>
+                </div>
+                <span class="text-sm font-bold text-gray-400">SESSION 03</span>
+                <h3 class="text-xl font-bold text-[#002147] mt-2 mb-4">12:30 - 13:00 | 기록</h3>
+                <p class="text-gray-600 italic mb-4">"Insight Sharing"</p>
+                <p class="text-gray-500">오늘 얻은 영감을 한 줄 평으로 남기고 다음 주 도서를 함께 선정하며 마무리합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#002147] mb-8">등대지기만을 위한 특별 혜택</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                        <div class="text-4xl">📚</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-[#002147]">도서비 전액 지원</h4>
+                            <p class="text-gray-500">매달 읽고 싶은 책을 무상으로 지원해 드립니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                        <div class="text-4xl">🍱</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-[#002147]">금요일 런치 제공</h4>
+                            <p class="text-gray-500">모임 시 매주 다른 프리미엄 도시락과 커피를 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                        <div class="text-4xl">✨</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-[#002147]">커리어 네트워크</h4>
+                            <p class="text-gray-500">부서에 상관없이 지적인 자극을 주는 동료들을 만납니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="w-80 h-80 md:w-96 md:h-96 bg-[#FFD700] rounded-full absolute -top-10 -right-10 opacity-20 blur-3xl"></div>
+                <div class="bg-[#002147] text-white p-12 rounded-[4rem] relative z-10 shadow-2xl transform rotate-3">
+                    <i class="fas fa-quote-left text-5xl text-[#FFD700] mb-6"></i>
+                    <p class="text-xl italic leading-relaxed mb-6">
+                        "혼자 읽기 힘들었던 두꺼운 책들을 동료들과 함께 금요일마다 조금씩 나누어 읽다 보니 벌써 5권이나 완독했어요! 회사 생활의 가장 큰 즐거움입니다."
+                    </p>
+                    <div class="font-bold">- 전략기획팀 최OO 대리 -</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="py-24 px-6 bg-[#002147] relative">
+        <div class="max-w-3xl mx-auto bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#002147] mb-2">지금 함께 시작하세요</h2>
+                <p class="text-gray-500">정보를 입력해 주시면 운영진이 확인 후 연락드립니다.</p>
+            </div>
+            
+            <form id="applyForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="font-bold text-[#002147] text-sm px-1">성함</label>
+                    <input type="text" required placeholder="홍길동" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-[#FFD700] transition-all outline-none">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-bold text-[#002147] text-sm px-1">사번 (6자리)</label>
+                    <input type="text" required placeholder="123456" maxlength="6" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-[#FFD700] transition-all outline-none">
+                </div>
+                <div class="space-y-2 md:col-span-2">
+                    <label class="font-bold text-[#002147] text-sm px-1">소속 부서</label>
+                    <select required class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-[#FFD700] transition-all outline-none cursor-pointer appearance-none">
+                        <option value="">부서를 선택해 주세요</option>
+                        <option>기획/전략</option>
+                        <option>IT/개발</option>
+                        <option>디자인/브랜드</option>
+                        <option>마케팅/영업</option>
+                        <option>인사/지원</option>
+                        <option>제조/생산</option>
+                    </select>
+                </div>
+                <div class="space-y-2 md:col-span-2">
+                    <label class="font-bold text-[#002147] text-sm px-1">참여하고 싶은 이유</label>
+                    <textarea rows="3" placeholder="간단히 적어주세요 (도서 추천 등)" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-[#FFD700] transition-all outline-none"></textarea>
+                </div>
+                <div class="md:col-span-2 flex items-center gap-2 mb-4">
+                    <input type="checkbox" id="agree" required class="w-5 h-5 accent-[#002147]">
+                    <label for="agree" class="text-sm text-gray-500 underline cursor-pointer">개인정보 수집 및 동호회 운영 목적 활용에 동의합니다.</label>
+                </div>
+                <button type="submit" class="md:col-span-2 bg-[#002147] text-white py-4 rounded-xl font-bold text-lg hover:bg-black transition-all shadow-lg active:scale-95">
+                    등대지기 신청하기
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-500 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-2">등대독서회 ⚓</h3>
+                <p>(주)제주비 사내 동호회 지원 사업의 일환으로 운영됩니다.</p>
+                <p class="mt-2"><i class="fas fa-map-marker-alt mr-2"></i>본사 3층 크리에이티브 라운지 (매주 금요일)</p>
+            </div>
+            <div class="flex space-x-6 text-2xl text-white">
+                <a href="#" class="hover:text-[#FFD700]"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#FFD700]"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="text-sm">
+                <p>&copy; 2025 JejuBee Reading Club. All rights reserved.</p>
+                <p>문의: 인사총무팀 (내선 104)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="bg-white rounded-3xl p-10 max-w-sm text-center shadow-2xl mx-4">
+            <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-paper-plane text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[#002147] mb-2">신청 완료!</h3>
+            <p class="text-gray-500 mb-8">등대지기가 되신 것을 환영합니다.<br>확인 후 안내 문자를 발송해 드릴게요.</p>
+            <button onclick="closeModal()" class="w-full bg-[#002147] text-white py-3 rounded-xl font-bold">확인</button>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const logoText = document.getElementById('logo-text');
+        const navLinks = document.querySelectorAll('#nav-links a');
+        const mobileBtn = document.querySelector('#mobile-menu-btn i');
+
+        window.onscroll = function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('nav-scrolled');
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-[#002147]');
+                navLinks.forEach(link => {
+                    if(!link.classList.contains('bg-[#FFD700]')) {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-gray-700');
+                    }
+                });
+                mobileBtn.classList.remove('text-white');
+                mobileBtn.classList.add('text-[#002147]');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                logoText.classList.add('text-white');
+                logoText.classList.remove('text-[#002147]');
+                navLinks.forEach(link => {
+                    if(!link.classList.contains('bg-[#FFD700]')) {
+                        link.classList.add('text-white');
+                        link.classList.remove('text-gray-700');
+                    }
+                });
+                mobileBtn.classList.add('text-white');
+                mobileBtn.classList.remove('text-[#002147]');
+            }
+        };
+
+        // Form Submission Logic
+        const form = document.getElementById('applyForm');
+        const modal = document.getElementById('successModal');
+
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        };
+
+        function closeModal() {
+            modal.style.display = 'none';
+            form.reset();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
